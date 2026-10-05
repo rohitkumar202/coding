@@ -1,6 +1,6 @@
 # Graph
 
-Code: [traversal_list.py](../graph/traversal_list.py) · [traversal_matrix.py](../graph/traversal_matrix.py)
+Code: [traversal_list.py](../graph/traversal_list.py) · [traversal_matrix.py](../graph/traversal_matrix.py) · [problems/](../graph/problems/)
 
 ## Important points
 
@@ -64,3 +64,10 @@ def bfs(start, graph):
                 visited.add(nb)
                 queue.append(nb)
 ```
+
+## Problems
+
+| Problem | Pattern | Key trick | Code |
+|---|---|---|---|
+| Copy graph | DFS | Copy every edge, but recurse only into unvisited nodes. **Hint:** `new_graph` can be the `visited` set (a node is in it exactly when visited) | [copy_graph.py](../graph/problems/copy_graph.py) |
+| Count islands | DFS on grid | Run DFS from every unvisited `1` and count the starts. Mark visited by setting the cell to `-1`. Check bounds first (`grid[-1]` wraps), then check `== 1` (not truthy: `-1` is truthy) | [count_island.py](../graph/problems/count_island.py) |

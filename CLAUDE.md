@@ -4,7 +4,7 @@ Python implementations of data structures and algorithms, plus revision notes. T
 
 ## Layout
 
-- `graph/`: graph code (`traversal_list.py` for the adjacency list, `traversal_matrix.py` for the adjacency matrix)
+- `graph/`: graph code (`traversal_list.py` for the adjacency list, `traversal_matrix.py` for the adjacency matrix, `problems/` for one file per solved problem)
 - `cheatsheet/`: one Markdown cheatsheet per topic, with `README.md` as the index
 - `images/`: generated images plus generator scripts; `images/README.md` maps each image to its code
 
@@ -21,11 +21,12 @@ The code changes often. **Whenever code in a topic folder is added or changed, u
 
 ## Cheatsheet format
 
-Keep sheets minimal. The user rejected a long format with tables, diagrams and traces.
+Keep sheets minimal. The user rejected a long format with comparison tables, flowcharts and traces.
 
 1. Title and links to the source files
 2. **Important points**: one line each
 3. **Brief code** per algorithm: shortest form of the repo's code, with each variant (for example, adjacency list and matrix) as its own labeled block
+4. **Problems** table: one row per problem with `Problem | Pattern | Key trick | Code`. The trick is one line and the code is a link to the file. No code blocks for problems, unless the code differs a lot from the templates above (for example, Dijkstra or topological sort).
 
 Use GitHub-flavored Markdown and relative links.
 
