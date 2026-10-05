@@ -1,19 +1,19 @@
-"""Generates images/dfs_bfs.svg — a cheat sheet for dfs() and bfs() in graph/traversal.py.
+"""Generates images/dfs_bfs.svg — a cheat sheet for dfs() and bfs() in graph/traversal_list.py.
 
 Run from the project root:  python3 images/generate_traversal.py
-Edit GRAPH / *_CODE / *_ORDER / *_RULES below when graph/traversal.py changes.
+Edit GRAPH / *_CODE / *_ORDER / *_RULES below when graph/traversal_list.py changes.
 """
 import math
 from html import escape
 from pathlib import Path
 
-# Must match `graph` in graph/traversal.py
+# Must match `graph` in graph/traversal_list.py
 GRAPH = {0: [1, 2], 1: [3, 4], 2: [4], 3: [5], 4: [5], 5: []}
 
 # Node positions inside a panel (x relative to panel left, y absolute)
 POS = {0: (285, 145), 1: (185, 215), 2: (385, 215), 3: (135, 285), 4: (285, 285), 5: (210, 355)}
 
-# Must match the code in graph/traversal.py; lines in *_HIGHLIGHT (1-based) get a marker
+# Must match the code in graph/traversal_list.py; lines in *_HIGHLIGHT (1-based) get a marker
 DFS_CODE = """def dfs(node, graph, visited):
   if node not in visited:
     print(node)
