@@ -13,6 +13,7 @@ Code: [traversal_list.py](../graph/traversal_list.py) · [traversal_matrix.py](.
 - Time: O(V + E) with an adjacency list, O(V²) with a matrix.
 - Disconnected graph: start a traversal from every unvisited node.
 - List vs matrix: only the neighbor loop changes.
+- Grid = graph: neighbors are the 4 directions. Check bounds before indexing (`grid[-1]` wraps).
 
 ## DFS
 
@@ -73,3 +74,4 @@ def bfs(start, graph):
 | Count islands | DFS on grid | Run DFS from every unvisited `1` and count the starts. Mark visited by setting the cell to `-1`. Check bounds first (`grid[-1]` wraps), then check `== 1` (not truthy: `-1` is truthy) | [count_island.py](../graph/problems/count_island.py) |
 | Bipartite graph | BFS 2-coloring | Color each neighbor the opposite color (`1` / `-1`). A neighbor with the same color means an odd cycle, so not bipartite. `colors` doubles as `visited` (`0` = unvisited). Start a BFS from **every** uncolored node (disconnected graph) | [bi_partite_graph.py](../graph/problems/bi_partite_graph.py) |
 | Matrix infection (rotting oranges) | Multi-source BFS on grid | Enqueue all infected cells first. Process one level per second (`for _ in range(len(queue))`). Count healthy cells and loop `while queue and healthy > 0`, else the answer is 1 too high. Healthy left over → `-1` | [matrix_infection.py](../graph/problems/matrix_infection.py) |
+| Longest increasing path (matrix) | DFS + memoization | Move only to strictly larger neighbors, so there are no cycles and no `visited` set is needed. Cache `memo[(r, c)]` = longest path starting at (r, c); it doesn't depend on how you got there. Brute force is exponential; memo makes it O(R·C) | [longest_increasing_path.py](../graph/problems/longest_increasing_path.py) |
