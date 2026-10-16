@@ -1,6 +1,6 @@
 # Dynamic programming
 
-Code: [climb_stairs.py](../datastructures/dynamicprogramming/climb_stairs.py) · [coin_change.py](../datastructures/dynamicprogramming/coin_change.py)
+Code: [climb_stairs.py](../datastructures/dynamicprogramming/climb_stairs.py) · [coin_change.py](../datastructures/dynamicprogramming/coin_change.py) · [house_robber.py](../datastructures/dynamicprogramming/house_robber.py)
 
 ## Important points
 
@@ -45,3 +45,4 @@ def ways_memo(coins, i, target, memo=None):
 | Climb stairs | Recursion (Fibonacci) | `f(n) = f(n-1) + f(n-2)`, `f(0) = 1`, `f(<0) = 0` | [climb_stairs.py](../datastructures/dynamicprogramming/climb_stairs.py) |
 | Coin change: number of ways | Take or skip, memo on `(i, target)` | Take = stay at `i` (coins reusable), skip = `i + 1`. Moving forward only counts combinations, not orderings | [coin_change.py](../datastructures/dynamicprogramming/coin_change.py) |
 | Coin change: minimum coins | Same recursion with `min` | Base case is `0` at `target == 0` (not `1`: that adds a coin to every answer). Dead end → `inf`, return `-1` if the result is `inf` | [coin_change.py](../datastructures/dynamicprogramming/coin_change.py) |
+| House robber | Take or skip, memo on `i` | Take house `i` → jump to `i + 2` (neighbor is off limits). Skip → `i + 1`. `rob(i) = max(arr[i] + rob(i + 2), rob(i + 1))` | [house_robber.py](../datastructures/dynamicprogramming/house_robber.py) |
