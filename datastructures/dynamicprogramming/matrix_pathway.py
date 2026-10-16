@@ -17,7 +17,7 @@ Constraints (typical):
 The answer fits in a 32-bit or 64-bit integer, or you’re asked to return it modulo 10^9 + 7.
 """
 
-# paths(r, c) = paths going down + paths going right; every path ends with one of the two.
+# paths(r, c) = paths going down + paths going right; every path starts with one of the two.
 # Plain recursion is exponential, too slow for 100 x 100. Memo on (r, c) makes it O(m * n).
 def matrix_pathway(r, c, m, n):
     if not 0 <= r < m:
