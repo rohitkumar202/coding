@@ -4,11 +4,12 @@ Python implementations of data structures and algorithms, plus revision notes. T
 
 ## Layout
 
-- `graph/`: graph code (`traversal_list.py` for the adjacency list, `traversal_matrix.py` for the adjacency matrix, `problems/` for one file per solved problem)
+- `datastructures/`: one folder per topic
+  - `datastructures/graph/`: graph code (`traversal_list.py` for the adjacency list, `traversal_matrix.py` for the adjacency matrix, `problems/` for one file per solved problem)
 - `cheatsheet/`: one Markdown cheatsheet per topic, with `README.md` as the index
 - `images/`: generated images plus generator scripts; `images/README.md` maps each image to its code
 
-New topics (arrays, trees, dynamic programming, ...) get their own code folder and their own `cheatsheet/<topic>.md`.
+New topics (arrays, backtracking, dynamic programming, ...) get their own folder `datastructures/<topic>/` (with `problems/` for solved problems) and their own `cheatsheet/<topic>.md`.
 
 ## Keep the cheatsheets in sync (important)
 
@@ -33,4 +34,4 @@ Use GitHub-flavored Markdown and relative links.
 ## Code style
 
 - Keep comments very brief: one line, saying why rather than what.
-- Each file runs on its own: `python3 graph/traversal_list.py`.
+- Each file runs on its own: `python3 datastructures/graph/traversal_list.py`.

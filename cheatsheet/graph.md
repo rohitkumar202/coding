@@ -1,6 +1,6 @@
 # Graph
 
-Code: [traversal_list.py](../graph/traversal_list.py) · [traversal_matrix.py](../graph/traversal_matrix.py) · [problems/](../graph/problems/)
+Code: [traversal_list.py](../datastructures/graph/traversal_list.py) · [traversal_matrix.py](../datastructures/graph/traversal_matrix.py) · [problems/](../datastructures/graph/problems/)
 
 ## Important points
 
@@ -70,9 +70,9 @@ def bfs(start, graph):
 
 | Problem | Pattern | Key trick | Code |
 |---|---|---|---|
-| Copy graph | DFS | Copy every edge, but recurse only into unvisited nodes. **Hint:** `new_graph` can be the `visited` set (a node is in it exactly when visited) | [copy_graph.py](../graph/problems/copy_graph.py) |
-| Count islands | DFS on grid | Run DFS from every unvisited `1` and count the starts. Mark visited by setting the cell to `-1`. Check bounds first (`grid[-1]` wraps), then check `== 1` (not truthy: `-1` is truthy) | [count_island.py](../graph/problems/count_island.py) |
-| Bipartite graph | BFS 2-coloring | Color each neighbor the opposite color (`1` / `-1`). A neighbor with the same color means an odd cycle, so not bipartite. `colors` doubles as `visited` (`0` = unvisited). Start a BFS from **every** uncolored node (disconnected graph) | [bi_partite_graph.py](../graph/problems/bi_partite_graph.py) |
-| Matrix infection (rotting oranges) | Multi-source BFS on grid | Enqueue all infected cells first. Process one level per second (`for _ in range(len(queue))`). Count healthy cells and loop `while queue and healthy > 0`, else the answer is 1 too high. Healthy left over → `-1` | [matrix_infection.py](../graph/problems/matrix_infection.py) |
-| Longest increasing path (matrix) | DFS + memoization | Move only to strictly larger neighbors, so there are no cycles and no `visited` set is needed. Cache `memo[(r, c)]` = longest path starting at (r, c); it doesn't depend on how you got there. Brute force is exponential; memo makes it O(R·C) | [longest_increasing_path.py](../graph/problems/longest_increasing_path.py) |
-| Shortest transformation sequence (word ladder) | BFS level order | Words are nodes, and words differing by one letter are neighbors. Count levels (`for _ in range(len(queue))`) and return the count when you pop `end`; the count includes the start word. Unreachable `end` → return `0`, not the level count | [shortest_transformation_sequence.py](../graph/problems/shortest_transformation_sequence.py) |
+| Copy graph | DFS | Copy every edge, but recurse only into unvisited nodes. **Hint:** `new_graph` can be the `visited` set (a node is in it exactly when visited) | [copy_graph.py](../datastructures/graph/problems/copy_graph.py) |
+| Count islands | DFS on grid | Run DFS from every unvisited `1` and count the starts. Mark visited by setting the cell to `-1`. Check bounds first (`grid[-1]` wraps), then check `== 1` (not truthy: `-1` is truthy) | [count_island.py](../datastructures/graph/problems/count_island.py) |
+| Bipartite graph | BFS 2-coloring | Color each neighbor the opposite color (`1` / `-1`). A neighbor with the same color means an odd cycle, so not bipartite. `colors` doubles as `visited` (`0` = unvisited). Start a BFS from **every** uncolored node (disconnected graph) | [bi_partite_graph.py](../datastructures/graph/problems/bi_partite_graph.py) |
+| Matrix infection (rotting oranges) | Multi-source BFS on grid | Enqueue all infected cells first. Process one level per second (`for _ in range(len(queue))`). Count healthy cells and loop `while queue and healthy > 0`, else the answer is 1 too high. Healthy left over → `-1` | [matrix_infection.py](../datastructures/graph/problems/matrix_infection.py) |
+| Longest increasing path (matrix) | DFS + memoization | Move only to strictly larger neighbors, so there are no cycles and no `visited` set is needed. Cache `memo[(r, c)]` = longest path starting at (r, c); it doesn't depend on how you got there. Brute force is exponential; memo makes it O(R·C) | [longest_increasing_path.py](../datastructures/graph/problems/longest_increasing_path.py) |
+| Shortest transformation sequence (word ladder) | BFS level order | Words are nodes, and words differing by one letter are neighbors. Count levels (`for _ in range(len(queue))`) and return the count when you pop `end`; the count includes the start word. Unreachable `end` → return `0`, not the level count | [shortest_transformation_sequence.py](../datastructures/graph/problems/shortest_transformation_sequence.py) |

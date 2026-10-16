@@ -10,11 +10,13 @@ graph = [
     [0, 0, 0, 0, 0, 0],  # 5
 ]
 
+# DFS implementation
+# The visited check is on the neighbor before recursing, so only the start node is unchecked.
 def dfs(node, graph, visited):
     print(node)
-    visited.add(node)
+    visited.add(node)  # mark before recursing, else a cycle loops forever
 
-    for j in range(len(graph[node])):
+    for j in range(len(graph[node])):  # scan the whole row: O(V) per node, O(V²) total
         if graph[node][j] == 1 and j not in visited:            
             dfs(j, graph, visited)
            

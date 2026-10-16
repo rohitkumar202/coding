@@ -26,11 +26,14 @@ def level_order_traversal(queue, graph, visited, end, count = 0):
                 if neighbor not in visited:
                     queue.append(neighbor)
                     visited.add(neighbor)  # mark on enqueue, so a word is queued once
-    # NOTE: if end is unreachable, this returns the number of levels (5 for red -> zzz).
-    #       It should return 0 (word ladder convention).
-    return count
+    # Loop ended without popping end -> unreachable, so return 0 (word ladder convention).
+    # NOTE: this check is always true here (a reached end returns inside the loop),
+    #       so `return count` never runs. A plain `return 0` does the same.
+    if end not in visited:
+        return 0
+    return count # this is not requried as code will never reach here
 
 
-res = level_order_traversal(['red'], graph, set(), 'hat')
+res = level_order_traversal(['red'], graph, set(), 'zzz')
 print(res)
 
